@@ -82,13 +82,22 @@ async function fetchExport() {
     log('reading export from', input);
     return JSON.parse(readFileSync(input, 'utf8'));
   }
+  // The directory hands out at most a few thousand stations per request, so page through it.
+  const PAGE = 5000;
   let lastError;
   for (const host of await mirrors()) {
     try {
       log('downloading export from', host);
-      const data = await fetchJson(`https://${host}/json/stations?hidebroken=true`);
-      if (Array.isArray(data) && data.length > 1000) return data;
-      throw new Error(`unexpected export (${Array.isArray(data) ? data.length : typeof data})`);
+      const all = [];
+      for (let offset = 0; ; offset += PAGE) {
+        const page = await fetchJson(`https://${host}/json/stations?hidebroken=true&order=stationuuid&limit=${PAGE}&offset=${offset}`);
+        if (!Array.isArray(page)) throw new Error(`unexpected answer at offset ${offset}`);
+        all.push(...page);
+        if (page.length < PAGE) break;
+        if (all.length % 20000 === 0) log(`  …${all.length}`);
+      }
+      if (all.length < 1000) throw new Error(`export too small (${all.length})`);
+      return all;
     } catch (e) {
       lastError = e;
       log('failed:', e.message);

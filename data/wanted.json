@@ -1,5 +1,5 @@
 {
-  "_help": "Stations you want added but do not have a stream address for. Give the name, the station's website (site), the two-letter country and, if known, state (town or region), tags and language. Run `node find-streams.mjs` in the catalog folder: it opens each site, presses play, captures the stream, tests it and writes the working ones into additions.json, marking the entry here as done.",
+  "_help": "Stations you want added but do not have a stream address for. Give the name, the station's website (site), the two-letter country and, if known, state (town or region), tags and language. Run `node find-streams.mjs` in the catalog folder: it opens each site, presses play, captures the stream, tests it and writes the working ones into additions.json, marking the entry here as done. Entries with an empty `site` are skipped: fill in the station's website first (open the station name in Google and copy the address of its own site, not a directory page).",
   "stations": [
     {
       "name": "Europa Plus Kazakhstan",
@@ -67,6 +67,270 @@
         "kazakh",
         "folk",
         "culture"
+      ],
+      "language": "kazakh"
+    },
+    {
+      "name": "Radio Dacha Kazakhstan",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "pop",
+        "russian"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Radio Astana",
+      "site": "",
+      "country": "KZ",
+      "state": "Astana",
+      "tags": [
+        "news",
+        "talk",
+        "kazakh"
+      ],
+      "language": "kazakh"
+    },
+    {
+      "name": "Orda FM",
+      "site": "",
+      "country": "KZ",
+      "state": "Astana",
+      "tags": [
+        "pop",
+        "kazakh"
+      ],
+      "language": "kazakh"
+    },
+    {
+      "name": "Energy FM Kazakhstan",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "pop",
+        "dance",
+        "hits"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Dala FM (Narodnoe Radio)",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "folk",
+        "kazakh"
+      ],
+      "language": "kazakh"
+    },
+    {
+      "name": "Lux FM Kazakhstan",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "pop",
+        "hits"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Radio City Almaty",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "pop",
+        "hits"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Retro FM Qazaqstan",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "oldies",
+        "retro"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Radio Tandem",
+      "site": "",
+      "country": "KZ",
+      "state": "Aktobe",
+      "tags": [
+        "pop",
+        "regional"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Humor FM Kazakhstan",
+      "site": "",
+      "country": "KZ",
+      "state": "Temirtau",
+      "tags": [
+        "comedy",
+        "entertainment"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Radio KN 101.5",
+      "site": "",
+      "country": "KZ",
+      "state": "Kostanay",
+      "tags": [
+        "regional",
+        "pop"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Alau Radio",
+      "site": "",
+      "country": "KZ",
+      "state": "Kostanay",
+      "tags": [
+        "regional",
+        "pop"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Russkoe Radio Kostanay",
+      "site": "",
+      "country": "KZ",
+      "state": "Kostanay",
+      "tags": [
+        "pop",
+        "russian"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "GFM Semey",
+      "site": "",
+      "country": "KZ",
+      "state": "Semey",
+      "tags": [
+        "pop",
+        "regional"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Radio Aksai",
+      "site": "",
+      "country": "KZ",
+      "state": "Aksai",
+      "tags": [
+        "regional"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Serebro Radio",
+      "site": "",
+      "country": "KZ",
+      "state": "Kostanay",
+      "tags": [
+        "pop"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Like FM Kazakhstan",
+      "site": "",
+      "country": "KZ",
+      "state": "Kostanay",
+      "tags": [
+        "pop",
+        "hits"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Aloha.FM",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "chillout",
+        "lounge"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Geedeon Radio",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "pop"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Halyk Radio",
+      "site": "",
+      "country": "KZ",
+      "state": "Pavlodar",
+      "tags": [
+        "regional",
+        "kazakh"
+      ],
+      "language": "kazakh"
+    },
+    {
+      "name": "Toi Duman",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "kazakh",
+        "folk",
+        "wedding"
+      ],
+      "language": "kazakh"
+    },
+    {
+      "name": "BoomRoom.kz",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "hip-hop",
+        "rap"
+      ],
+      "language": "russian"
+    },
+    {
+      "name": "Jibek Joly Radio",
+      "site": "",
+      "country": "KZ",
+      "state": "Astana",
+      "tags": [
+        "kazakh",
+        "culture"
+      ],
+      "language": "kazakh"
+    },
+    {
+      "name": "Mustafin FM",
+      "site": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "pop",
+        "kazakh"
       ],
       "language": "kazakh"
     }

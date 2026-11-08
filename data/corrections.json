@@ -1,7 +1,26 @@
 {
-  "_help": "Stations the directory files under the wrong country or place. Matched by exact name (case does not matter). `country` is the real two-letter code; `state` the real place, if known. Keep this in step with src/data/corrections.ts, which does the same job for the live fallback.",
+  "_help": "Stations the directory files under the wrong country or place, or without a genre they should have. Matched by name (case does not matter; \"CHUO\" also catches \"CHUO 89.1 FM\"). `country` is the real two-letter code; `state` the real place, if known; `onlyIn` limits the fix to stations the directory files under that country; `addTags` adds genres. Keep this in step with src/data/corrections.ts, which does the same job for the live fallback.",
   "stations": [
-    { "name": "Ayaz TV", "country": "AZ" },
-    { "name": "CKWW", "country": "CA", "state": "Windsor, Ontario" }
+    {
+      "name": "Ayaz TV",
+      "country": "AZ"
+    },
+    {
+      "name": "CKWW",
+      "country": "CA",
+      "state": "Windsor, Ontario"
+    },
+    {
+      "name": "CHUO",
+      "onlyIn": "CA",
+      "country": "CA",
+      "state": "Ottawa, Ontario",
+      "addTags": [
+        "progressive rock",
+        "campus radio",
+        "community radio"
+      ],
+      "note": "University of Ottawa campus radio, home of La Villa Strangiato (weekly prog rock show)"
+    }
   ]
 }

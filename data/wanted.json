@@ -333,6 +333,18 @@
         "kazakh"
       ],
       "language": "kazakh"
+    },
+    {
+      "name": "CHUO 89.1 FM",
+      "site": "https://chuo.fm/",
+      "country": "CA",
+      "state": "Ottawa, Ontario",
+      "tags": [
+        "progressive rock",
+        "campus radio",
+        "community radio"
+      ],
+      "language": "english,french"
     }
   ]
 }

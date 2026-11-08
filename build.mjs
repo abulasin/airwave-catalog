@@ -167,16 +167,27 @@ function applyRemovals(rows, removals) {
 function applyCorrections(rows, corrections) {
   const byName = new Map((corrections.stations ?? []).map((c) => [norm(c.name), c]));
   let fixed = 0;
+  const seen = [];
   for (const s of rows) {
     const key = norm(s.name);
     const fix = byName.get(key) ?? [...byName.values()].find((c) => key.startsWith(`${norm(c.name)} `));
     if (!fix) continue;
+    // `onlyIn`: apply only to stations the directory files under this country (names can repeat across countries).
+    if (fix.onlyIn && String(fix.onlyIn).toUpperCase() !== s.countryCode) continue;
     const country = String(fix.country || s.countryCode).toUpperCase();
     s.state = fix.state ?? (country === s.countryCode ? s.state : '');
     s.countryCode = country;
+    // `addTags`: genres to add, so the station shows under those genre buttons.
+    for (const t of fix.addTags ?? []) {
+      const tag = String(t).trim().toLowerCase();
+      if (tag && !s.tags.includes(tag)) s.tags = [...s.tags, tag];
+    }
+    seen.push(`${s.name} (${s.countryCode}${s.state ? ', ' + s.state : ''})`);
     fixed++;
   }
   log(`corrections: ${fixed} station(s) re-filed`);
+  // Shown on the run's page in GitHub, so it is easy to see which stations a correction caught.
+  if (process.env.GITHUB_ACTIONS) console.log(`::notice title=Corrections::${seen.join('; ').slice(0, 900) || 'none matched'}`);
 }
 
 function ourStations(additions) {

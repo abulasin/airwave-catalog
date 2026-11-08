@@ -1,0 +1,11 @@
+{
+  "name": "airwave-atlas-catalog",
+  "private": true,
+  "type": "module",
+  "description": "Nightly build of the Airwave Atlas station catalog",
+  "scripts": {
+    "build": "node build.mjs",
+    "quick": "node build.mjs --no-check"
+  },
+  "engines": { "node": ">=20" }
+}

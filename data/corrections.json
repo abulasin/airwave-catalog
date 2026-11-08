@@ -1,0 +1,7 @@
+{
+  "_help": "Stations the directory files under the wrong country or place. Matched by exact name (case does not matter). `country` is the real two-letter code; `state` the real place, if known. Keep this in step with src/data/corrections.ts, which does the same job for the live fallback.",
+  "stations": [
+    { "name": "Ayaz TV", "country": "AZ" },
+    { "name": "CKWW", "country": "CA", "state": "Windsor, Ontario" }
+  ]
+}

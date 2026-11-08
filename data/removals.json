@@ -1,0 +1,6 @@
+{
+  "_help": "Stations to leave out of the catalog. `ids` are directory station UUIDs; `names` are exact names (case does not matter); `patterns` are regular expressions tested against the name. Use this for silent streams, duplicates and list-title entries that are not stations.",
+  "ids": [],
+  "names": ["Radio Armisa"],
+  "patterns": []
+}

@@ -1,0 +1,50 @@
+# Builds the station catalog every night and publishes it to GitHub Pages.
+# The finished files are uploaded as a Pages artifact, not committed, so the repository stays small.
+name: Build catalog
+
+on:
+  schedule:
+    - cron: '17 4 * * *' # 04:17 UTC every day (about midnight in Toronto)
+  workflow_dispatch: # the "Run workflow" button
+  push:
+    branches: [main]
+    paths: ['data/**', 'build.mjs', '.github/workflows/build.yml']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/configure-pages@v5
+        id: pages
+      - name: Build the catalog
+        env:
+          # Where the site is published; last night's check history is read from here.
+          CATALOG_SITE_URL: ${{ steps.pages.outputs.base_url }}
+          CATALOG_CHECK_POPULAR: '2500'
+        run: node build.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

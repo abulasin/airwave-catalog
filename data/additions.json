@@ -1,0 +1,19 @@
+{
+  "_help": "Stations to add that the directory does not have. Each needs at least name, url and country (two-letter code). Keep the stream address (not a web page): it usually ends in .mp3, .aac, .m3u8 or a port number. The nightly build checks every stream here and leaves out any that does not answer.",
+  "stations": [
+    {
+      "name": "Example FM (delete me)",
+      "url": "https://example.com/stream.mp3",
+      "homepage": "https://example.com",
+      "favicon": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "pop",
+        "kazakh"
+      ],
+      "language": "kazakh",
+      "skip": true
+    }
+  ]
+}

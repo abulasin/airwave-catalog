@@ -1,0 +1,11 @@
+{
+  "_help": "Stations you want added but do not have a stream address for. Give the name, the station's website (site), the two-letter country and, if known, state (town or region), tags and language. Run `node find-streams.mjs` in the catalog folder: it opens each site, presses play, captures the stream, tests it and writes the working ones into additions.json, marking the entry here as done.",
+  "stations": [
+    { "name": "Europa Plus Kazakhstan", "site": "https://europaplus.kz/", "country": "KZ", "state": "Almaty", "tags": ["pop", "hits"], "language": "russian" },
+    { "name": "Radio NS", "site": "https://ns.kz/", "country": "KZ", "state": "Almaty", "tags": ["pop", "hits"], "language": "russian" },
+    { "name": "Love Radio Kazakhstan", "site": "https://loveradio.kz/", "country": "KZ", "state": "Almaty", "tags": ["pop", "love songs"], "language": "russian" },
+    { "name": "Russkoe Radio Asia", "site": "https://rusradio.kz/", "country": "KZ", "state": "Almaty", "tags": ["pop", "russian"], "language": "russian" },
+    { "name": "Business FM Kazakhstan", "site": "https://businessfm.kz/", "country": "KZ", "state": "Almaty", "tags": ["news", "business", "talk"], "language": "russian" },
+    { "name": "Shalqar Radiosy", "site": "https://shalqar.kz/", "country": "KZ", "state": "Astana", "tags": ["kazakh", "folk", "culture"], "language": "kazakh" }
+  ]
+}

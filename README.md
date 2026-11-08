@@ -11,6 +11,7 @@ one file that the app downloads when it changes.
 | `additions.json` | Stations the directory lacks: name, stream `url`, two-letter `country`, and if known `state` (town or region), `tags`, `language`, `homepage`, `favicon`. A station only goes in if its stream answers on the night of the build. |
 | `removals.json` | Stations to leave out: directory `ids`, exact `names`, or regular-expression `patterns`. For silent streams, duplicates, list titles that are not stations. |
 | `corrections.json` | Stations filed under the wrong country or place, matched by name. Keep in step with `src/data/corrections.ts` in the app, which does the same for the live fallback. |
+| `wanted.json` | Stations you want but have no stream address for: name, website, country. `find-streams.mjs` fills in the rest (below). |
 
 Edit a file, commit, and the next build picks it up (a push to `main` also starts a build).
 
@@ -51,6 +52,35 @@ committed, so the repository never grows with them.
 Limits that matter: GitHub Pages allows about 100 GB of downloads a month, and the file is about
 5 MB compressed, so that is roughly 20,000 downloads a month. Each phone downloads at most once a
 day, and only when the file changed.
+
+## Finding a station's stream address automatically (`find-streams.mjs`)
+
+Most stations publish only a web player, not the stream address behind it. This script opens the
+site in a hidden browser, presses play, watches what the player loads, keeps the requests that
+look like audio, tests them, and writes the working one into `additions.json`.
+
+One-time setup, in this folder (downloads a browser, about 150 MB):
+
+```bash
+npm install
+npx playwright install chromium
+```
+
+Then:
+
+```bash
+node find-streams.mjs --site https://example-radio.kz/   # one site: prints what it finds
+node find-streams.mjs                                     # every entry in data/wanted.json → additions.json
+node find-streams.mjs --dead                              # directory stations that failed the last check: look for a new address on their websites → data/repairs.json
+```
+
+It gets most sites, not all: players that need a real person's click, sites that block automated
+browsers, and streams that are only served in some countries will come back as "nothing working
+found". For those, Chrome's own Network panel (F12 → Network → filter `mp3` or `m3u8` → play) shows
+the address, and it can be typed straight into `additions.json`.
+
+`data/wanted.json` starts with six Kazakh stations whose sites I could not reach from where the
+app was built; run the script once and commit what it finds.
 
 ## Adding stations from elsewhere
 

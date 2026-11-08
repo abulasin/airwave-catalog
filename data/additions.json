@@ -14,6 +14,22 @@
       ],
       "language": "kazakh",
       "skip": true
+    },
+    {
+      "name": "Business FM Kazakhstan",
+      "url": "https://bfmreg.hostingradio.ru/kz.bfm128.mp3",
+      "homepage": "https://businessfm.kz/",
+      "favicon": "",
+      "country": "KZ",
+      "state": "Almaty",
+      "tags": [
+        "news",
+        "business",
+        "talk"
+      ],
+      "language": "russian",
+      "codec": "MP3",
+      "bitrate": 128
     }
   ]
 }

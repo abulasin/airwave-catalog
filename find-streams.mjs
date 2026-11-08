@@ -41,6 +41,8 @@ function looksLikeStream(url, contentType) {
   const u = url.toLowerCase();
   if (/\.(png|jpe?g|gif|svg|webp|css|js|woff2?|ttf|ico|json|html?)(\?|$)/.test(u)) return false;
   if (/google|facebook|doubleclick|analytics|gstatic|yandex|mc\.yandex|hotjar|sentry/.test(u)) return false;
+  // Single tracks, not stations.
+  if (/preview|\/songs?\/|\/tracks?\/|podcast|jingle|promo|\/uploads?\/|\/storage\/|\/media\/|\/audio\/[^/]*\.mp3$/.test(u)) return false;
   const t = (contentType || '').toLowerCase();
   if (/audio\/|mpegurl|x-scpls|aacp?$|ogg|octet-stream/.test(t)) return true;
   return /\.(mp3|aac|aacp|m3u8|m3u|pls|ogg|opus)(\?|$)|\/stream|\/listen|\/live|:8[0-9]{3}\/|icecast|shoutcast|radiocast|streaming/.test(u);
@@ -55,6 +57,10 @@ async function streamAnswers(url) {
     if (!res.ok) return null;
     const type = (res.headers.get('content-type') || '').toLowerCase();
     if (type && !/audio|mpegurl|octet-stream|ogg|aac|mp3|mpeg|x-scpls|video\/mp2t/.test(type)) return null;
+    // A live stream has no end: a file with a known length (a song, a jingle, a preview) is not a station.
+    const length = Number(res.headers.get('content-length'));
+    const icy = [...res.headers.keys()].some((k) => k.startsWith('icy-') || k.startsWith('ice-'));
+    if (length > 0 && !icy && !type.includes('mpegurl')) return null;
     const reader = res.body?.getReader();
     if (reader) {
       const chunk = await reader.read();

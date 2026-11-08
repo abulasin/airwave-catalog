@@ -9,18 +9,6 @@
       "name": "CKWW",
       "country": "CA",
       "state": "Windsor, Ontario"
-    },
-    {
-      "name": "CHUO",
-      "onlyIn": "CA",
-      "country": "CA",
-      "state": "Ottawa, Ontario",
-      "addTags": [
-        "progressive rock",
-        "campus radio",
-        "community radio"
-      ],
-      "note": "University of Ottawa campus radio, home of La Villa Strangiato (weekly prog rock show)"
     }
   ]
 }

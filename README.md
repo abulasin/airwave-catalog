@@ -11,7 +11,7 @@ one file that the app downloads when it changes.
 | `additions.json` | Stations the directory lacks: name, stream `url`, two-letter `country`, and if known `state` (town or region), `tags`, `language`, `homepage`, `favicon`. A station only goes in if its stream answers on the night of the build. |
 | `removals.json` | Stations to leave out: directory `ids`, exact `names`, or regular-expression `patterns`. For silent streams, duplicates, list titles that are not stations. |
 | `corrections.json` | Stations filed under the wrong country or place, matched by name. Keep in step with `src/data/corrections.ts` in the app, which does the same for the live fallback. |
-| `wanted.json` | Stations you want but have no stream address for: name, website, country. `find-streams.mjs` fills in the rest (below). |
+| `wanted.json` | Stations you want but have no stream address for: name and country, website if known (otherwise the script searches for it). `find-streams.mjs` fills in the rest (below). |
 
 Edit a file, commit, and the next build picks it up (a push to `main` also starts a build).
 
@@ -70,7 +70,7 @@ Then:
 
 ```bash
 node find-streams.mjs --site https://example-radio.kz/   # one site: prints what it finds
-node find-streams.mjs                                     # every entry in data/wanted.json → additions.json
+node find-streams.mjs                                     # every entry in data/wanted.json → additions.json (looks up websites that are missing)
 node find-streams.mjs --dead                              # directory stations that failed the last check: look for a new address on their websites → data/repairs.json
 ```
 

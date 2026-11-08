@@ -169,6 +169,34 @@ function score(s) {
   return v;
 }
 
+/** Directory and social sites: never a station's own site. */
+const NOT_OFFICIAL = /onlineradiobox|mytuner|streema|radio\.net|radio-browser|radiohear|dubbeh|topradio|radio-online|radiovolna|radio-volna|online-radio-list|lixty|zeno\.fm|tunein|liveonlineradio|radioinc|bestradio|oiradio|facebook|instagram|vk\.com|youtube|wikipedia|wikiwand|apple\.com|google|yandex|duckduckgo|bing\.com|2gis|kaspi|olx|tiktok|t\.me|telegram/i;
+
+/** Looks the station up on DuckDuckGo and returns candidate websites, most likely first. */
+async function findSites(page, name, country) {
+  const query = `${name} radio ${country === 'KZ' ? 'Казахстан' : country} официальный сайт`;
+  const out = [];
+  try {
+    await page.goto(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(query)}`, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    const links = await page.evaluate(() => [...document.querySelectorAll('a.result__a, a.result__url, h2 a')].map((a) => a.href));
+    for (let href of links) {
+      try {
+        const u = new URL(href);
+        // DuckDuckGo wraps results in a redirect with the real address in `uddg`.
+        const real = u.searchParams.get('uddg');
+        if (real) href = real;
+        const host = new URL(href).hostname;
+        if (NOT_OFFICIAL.test(href) || out.some((o) => new URL(o).hostname === host)) continue;
+        out.push(new URL(href).origin + '/');
+      } catch {}
+      if (out.length >= 3) break;
+    }
+  } catch (e) {
+    log(`  search failed: ${e.message.split('\n')[0]}`);
+  }
+  return out;
+}
+
 /** Best working stream for one site, or null. */
 async function findStream(browser, site) {
   const candidates = await sniff(browser, site);
@@ -221,14 +249,28 @@ async function main() {
     const additions = readJson(additionsPath, { stations: [] });
     const have = new Set(additions.stations.map((s) => (s.url || '').toLowerCase()));
     let added = 0;
+    const searchContext = await browser.newContext({ userAgent: USER_AGENT, locale: 'ru-RU' });
+    const searchPage = await searchContext.newPage();
     for (const w of wanted.stations ?? []) {
-      if (!w.site || !w.name || !w.country) {
-        log(`skipping "${w.name || '?'}": needs name, site and country`);
+      if (!w.name || !w.country) {
+        log(`skipping "${w.name || '?'}": needs name and country`);
         continue;
       }
       if (w.done) continue;
-      log(`${w.name}: ${w.site}`);
-      const found = await findStream(browser, w.site);
+      // No website given: look it up, and try the first few results that are not directories.
+      let sites = w.site ? [w.site] : [];
+      if (!sites.length) {
+        sites = await findSites(searchPage, w.name, w.country);
+        log(`${w.name}: looked up → ${sites.join(', ') || 'no sites found'}`);
+      } else log(`${w.name}: ${w.site}`);
+      let found = null;
+      for (const site of sites) {
+        found = await findStream(browser, site);
+        if (found) {
+          w.site = site;
+          break;
+        }
+      }
       if (!found) {
         log('  nothing working found');
         continue;
@@ -252,6 +294,7 @@ async function main() {
       }
       w.done = true;
     }
+    await searchContext.close();
     writeFileSync(additionsPath, JSON.stringify(additions, null, 2));
     writeFileSync(join(DATA, 'wanted.json'), JSON.stringify(wanted, null, 2));
     log(`added ${added} station(s) to data/additions.json`);

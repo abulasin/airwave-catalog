@@ -1,5 +1,5 @@
 {
-  "_help": "Stations you want added but do not have a stream address for. Give the name, the station's website (site), the two-letter country and, if known, state (town or region), tags and language. Run `node find-streams.mjs` in the catalog folder: it opens each site, presses play, captures the stream, tests it and writes the working ones into additions.json, marking the entry here as done. Entries with an empty `site` are skipped: fill in the station's website first (open the station name in Google and copy the address of its own site, not a directory page).",
+  "_help": "Stations you want added but do not have a stream address for. Give the name and the two-letter country; add the station's website (site) if you know it, otherwise the script looks it up. Run `node find-streams.mjs` in the catalog folder: it opens the site, presses play, captures the stream, tests it and writes the working ones into additions.json, marking the entry here as done.",
   "stations": [
     {
       "name": "Europa Plus Kazakhstan",

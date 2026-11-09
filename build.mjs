@@ -164,6 +164,48 @@ function applyRemovals(rows, removals) {
   return out;
 }
 
+/**
+ * Afghanistan is first in the directory's country menu, so stations whose owners never picked a
+ * country end up there. Only stations that look Afghan stay: an Afghan language, Arabic script,
+ * or an Afghan word in the name or genres. The rest move to the country of their website's
+ * domain (radiobandeirantes.com.br → Brazil), or lose the country (still found by search).
+ */
+const DEFAULT_PICK = new Set(['AF']);
+const AFGHAN = /afghan|kabul|herat|kandahar|qandahar|mazar|jalalabad|kunduz|pashto|pashtu|dari|persian|farsi|uzbek|turkmen|hazara|balkh|ghazni|helmand|nangarhar|badakhshan/i;
+/** Country domains that are sold to anyone, so they say nothing about where a station is. */
+const VANITY_TLD = new Set(['fm', 'tv', 'io', 'me', 'co', 'ly', 'am', 'ai', 'cc', 'to', 'ws', 'nu', 'la', 'ag', 'gg', 'ac', 'sh', 'so', 'st', 'im', 'vg', 'tk', 'ml', 'ga', 'cf', 'gq', 'cx', 'gs', 'ms', 'mu', 'lv', 'gl', 'cd', 'sx', 'eu', 'af']);
+const REGION = new Intl.DisplayNames(['en'], { type: 'region' });
+
+function countryFromSite(homepage) {
+  let host = '';
+  try {
+    host = new URL(homepage).hostname.toLowerCase();
+  } catch {
+    return '';
+  }
+  const tld = host.split('.').pop() ?? '';
+  if (tld.length !== 2 || VANITY_TLD.has(tld)) return '';
+  const code = tld === 'uk' ? 'GB' : tld.toUpperCase();
+  const name = REGION.of(code);
+  return name && name !== code && !/unknown/i.test(name) ? code : '';
+}
+
+function fixDefaultCountry(rows) {
+  let moved = 0;
+  let cleared = 0;
+  for (const s of rows) {
+    if (!DEFAULT_PICK.has(s.countryCode)) continue;
+    const afghan = /[\u0600-\u06FF]/.test(s.name) || AFGHAN.test(`${s.name} ${s.language} ${s.tags.join(' ')} ${s.state}`);
+    if (afghan) continue;
+    const real = countryFromSite(s.homepage);
+    s.countryCode = real;
+    s.state = '';
+    if (real) moved++;
+    else cleared++;
+  }
+  log(`default-country fix: ${moved} moved by website domain, ${cleared} left without a country`);
+}
+
 /** Places with no real broadcasters: stations filed there are someone's joke or a mistake, so they get no country. */
 const NOT_A_COUNTRY = new Set(['AQ', 'BV', 'HM']);
 
@@ -353,6 +395,7 @@ async function main() {
   log(`usable: ${rows.length}`);
   rows = applyRemovals(rows, removals);
   clearFakeCountries(rows);
+  fixDefaultCountry(rows);
   applyCorrections(rows, corrections);
   placesFromNames(rows);
   const own = ourStations(additions);

@@ -164,6 +164,50 @@ function applyRemovals(rows, removals) {
   return out;
 }
 
+/** Places with no real broadcasters: stations filed there are someone's joke or a mistake, so they get no country. */
+const NOT_A_COUNTRY = new Set(['AQ', 'BV', 'HM']);
+
+function clearFakeCountries(rows) {
+  let n = 0;
+  for (const s of rows) if (NOT_A_COUNTRY.has(s.countryCode)) { s.countryCode = ''; s.state = ''; n++; }
+  log(`not-a-country: ${n} station(s) left without a country`);
+}
+
+/**
+ * Stations with no place, whose name says one ("Radio One - Tirana 95.2"): the place is taken from
+ * the name when it is a place other stations of the same country are already filed under.
+ */
+function placesFromNames(rows) {
+  const byCountry = new Map();
+  for (const s of rows) {
+    if (!s.state || !s.countryCode) continue;
+    const key = norm(s.state);
+    if (key.length < 4) continue;
+    let m = byCountry.get(s.countryCode);
+    if (!m) byCountry.set(s.countryCode, (m = new Map()));
+    const e = m.get(key) ?? { count: 0, spellings: new Map() };
+    e.count++;
+    e.spellings.set(s.state, (e.spellings.get(s.state) ?? 0) + 1);
+    m.set(key, e);
+  }
+  let n = 0;
+  for (const s of rows) {
+    if (s.state || !s.countryCode) continue;
+    const places = byCountry.get(s.countryCode);
+    if (!places) continue;
+    const name = ` ${norm(s.name)} `;
+    let best = null;
+    for (const [key, e] of places) {
+      if (e.count < 2 || !name.includes(` ${key} `)) continue;
+      if (!best || key.length > best.key.length) best = { key, e };
+    }
+    if (!best) continue;
+    s.state = [...best.e.spellings].sort((a, b) => b[1] - a[1])[0][0];
+    n++;
+  }
+  log(`places from names: ${n} station(s) given a place`);
+}
+
 function applyCorrections(rows, corrections) {
   const byName = new Map((corrections.stations ?? []).map((c) => [norm(c.name), c]));
   let fixed = 0;
@@ -308,7 +352,9 @@ async function main() {
   let rows = dedupe(raw.map(toRow).filter(Boolean));
   log(`usable: ${rows.length}`);
   rows = applyRemovals(rows, removals);
+  clearFakeCountries(rows);
   applyCorrections(rows, corrections);
+  placesFromNames(rows);
   const own = ourStations(additions);
   const ownUrls = new Set(own.map((s) => s.url.toLowerCase()));
   rows = [...own, ...rows.filter((s) => !ownUrls.has(s.url.toLowerCase()))];

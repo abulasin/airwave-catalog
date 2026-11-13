@@ -1,0 +1,33 @@
+# Checks whether stations answer, on demand: Actions > Probe stations > Run workflow, with part of a name.
+name: Probe stations
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: Station name (or part of it)
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Look up and test the streams
+        env:
+          NAME: ${{ inputs.name }}
+        run: |
+          q=$(python3 -c "import urllib.parse,os;print(urllib.parse.quote(os.environ['NAME']))")
+          curl -s -m 20 "https://de1.api.radio-browser.info/json/stations/byname/$q?limit=10" > found.json
+          python3 - <<'PY'
+          import json, subprocess
+          for s in json.load(open('found.json')):
+              print('====', s['name'], '|', s.get('state'), s.get('countrycode'), '|', s.get('codec'), s.get('bitrate'), '| lastcheckok', s.get('lastcheckok'), s.get('lastchecktime_iso8601'))
+              for key in ('url', 'url_resolved'):
+                  u = s.get(key)
+                  print(key, u)
+                  out = subprocess.run(['curl', '-s', '-L', '-m', '12', '-o', '/dev/null', '-r', '0-65535', '-w', 'http %{http_code} type %{content_type} bytes %{size_download} final %{url_effective}', u], capture_output=True, text=True)
+                  print('  ', out.stdout or out.stderr)
+          PY

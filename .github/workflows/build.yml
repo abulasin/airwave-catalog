@@ -8,7 +8,7 @@ on:
   workflow_dispatch: # the "Run workflow" button
   push:
     branches: [main]
-    paths: ['data/**', 'build.mjs', 'site/*.html', '.github/workflows/build.yml']
+    paths: ['data/**', 'build.mjs', 'site/*.html', 'site/*.jpg', '.github/workflows/build.yml']
 
 permissions:
   contents: read

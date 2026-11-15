@@ -1,0 +1,785 @@
+{
+ "_help": "Stations the place check flagged that were looked at and are filed correctly (cities whose names exist in two countries and similar). The check skips these.",
+ "ok": [
+  {
+   "name": "Radio Yar Plus2",
+   "filed": "IR",
+   "place": "California"
+  },
+  {
+   "name": "Radio Jamaica 94 FM",
+   "filed": "JM",
+   "place": "Surrey county, Kingston, Lyndhurst drive"
+  },
+  {
+   "name": "Rock and Pop",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "XHEXA \"Exa FM\" 104.9 FM Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  },
+  {
+   "name": "92.3 Fiesta Mexicana (GDL) - 92.3 FM - XHBIO-FM - Grupo Promomedios - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Radio Bio Bio",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "La Clave 92.9FM",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "Zip FM 103 FM",
+   "filed": "JM",
+   "place": "Surrey county, Kingston, 1B Courtney Walsh Drive"
+  },
+  {
+   "name": "RADIO CAROLINA cl",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "105.4 Cascais - O Rock da Linha",
+   "filed": "PT",
+   "place": "Estremadura"
+  },
+  {
+   "name": "Concierto",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "LOS40 Chile",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "95.9 VOX FM Radio Hits (GDL) - 95.9 FM - XHABCJ-FM - Grupo Radio Cañón - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Ambiant Sleeping Pill",
+   "filed": "US",
+   "place": "New Brunswick"
+  },
+  {
+   "name": "Beethoven - Santiago FM",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "Cumbia - La Musica Que Nos Gusta",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Los 40 Principales Chile",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "Rock 101",
+   "filed": "MX",
+   "place": "Guadalajara"
+  },
+  {
+   "name": "TBC Radio 88.5 FM",
+   "filed": "JM",
+   "place": "Surrey county, Kingston, 51 Molynes Road"
+  },
+  {
+   "name": "UC Radio Beethoven",
+   "filed": "CL",
+   "place": "Santiago, Región Metropolitana"
+  },
+  {
+   "name": "MEGA 96.3 (Los Ángeles) - 96.3 FM - KXOL-FM - Spanish Broadcasting System - Los Ángeles, California, EUA",
+   "filed": "MX",
+   "place": "Los Angeles, California"
+  },
+  {
+   "name": "Radio Agricultura",
+   "filed": "CL",
+   "place": "Santiago, Región Metropolitana"
+  },
+  {
+   "name": "XERED \"Radio RED\" 1110 AM Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  },
+  {
+   "name": "CANDELA 92.7 (Valladolid) - 92.7 FM - XHUM-FM - Cadena RASA - Valladolid, Yucatán",
+   "filed": "MX",
+   "place": "Valladolid, Yucatán"
+  },
+  {
+   "name": "105.1 Millenium Bella Música (GDL) - 105.1 FM - XHMBM-FM - Promomedios - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "107.5 RMX (GDL) - 107.5 FM - XHVOZ-FM - Grupo Audiorama Comunicaciones / Grupo Imagen - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Altawhid Radio",
+   "filed": "LB",
+   "place": "Tripoli"
+  },
+  {
+   "name": "Peru Folk radio",
+   "filed": "PE",
+   "place": "Trujillo"
+  },
+  {
+   "name": "WTJC-LP 96.9 Charlotte Amalie, St. Thomas, USVI",
+   "filed": "VI",
+   "place": "St. Thomas"
+  },
+  {
+   "name": "EL HERALDO RADIO 100.3 (GDL) - 100.3 FM - XHAV-FM - Heraldo Media Group - Guadalajara, JAlisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "97.9 Formula Melódica (GDL) - 97.9 FM - XETIA-FM - Grupo Unidifusión - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "99.7 Δίαυλος 1",
+   "filed": "GR",
+   "place": "Tripoli"
+  },
+  {
+   "name": "Cadena Ser + Santander",
+   "filed": "ES",
+   "place": "Santander"
+  },
+  {
+   "name": "Fame 95 FM",
+   "filed": "JM",
+   "place": "Surrey county, Kingston, Lyndhurst Road 32"
+  },
+  {
+   "name": "Fantasy Radio - Italo Disco",
+   "filed": "NL",
+   "place": "Burgenland"
+  },
+  {
+   "name": "Irtiqaa Way Radio - Prophetic Hadith",
+   "filed": "LB",
+   "place": "Tripoli"
+  },
+  {
+   "name": "Irtiqaa Way Radio 87.5 FM",
+   "filed": "LB",
+   "place": "Tripoli"
+  },
+  {
+   "name": "la chismosa",
+   "filed": "EC",
+   "place": "cuenca"
+  },
+  {
+   "name": "Radio frecuencia 100 - Trujillo",
+   "filed": "PE",
+   "place": "Trujillo"
+  },
+  {
+   "name": "Radio Recuerdos",
+   "filed": "CL",
+   "place": "Santiago, Región Metropolitana"
+  },
+  {
+   "name": "XHSH-FM \"Amor 95.3\" Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  },
+  {
+   "name": "Globo 98.7 (Guadalajara) - 98.7 FM - XHLC-FM - MVS Radio - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Bío-Bío Concepción 98.1",
+   "filed": "CL",
+   "place": "Concepción"
+  },
+  {
+   "name": "Irtiqaa Way Radio - Quran",
+   "filed": "LB",
+   "place": "Tripoli"
+  },
+  {
+   "name": "Maestro FM 90.9",
+   "filed": "LB",
+   "place": "Tripoli"
+  },
+  {
+   "name": "Nebulah Radio",
+   "filed": "FR",
+   "place": "Brest"
+  },
+  {
+   "name": "Rádio Festival Madeira (98.4 FM)",
+   "filed": "PT",
+   "place": "Slough, Windsor, Maidenhead, Heathrow"
+  },
+  {
+   "name": "super 949",
+   "filed": "EC",
+   "place": "Cuenca"
+  },
+  {
+   "name": "Super45.fm",
+   "filed": "CL",
+   "place": "Santiago, Región Metropolitana"
+  },
+  {
+   "name": "LA COMADRE 98.5 (Mérida) - 98.5 FM - XHMT-FM - Grupo SIPSE Radio - Mérida, Yucatán",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "RADIO GALLITO 760 (GDL) - 760 AM - XEZZ-AM - Radiópolis - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "RADIO METRÓPOLI 1150 (GDL) - 1150 AM - XEAD-AM - Grupo Unidifusión - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "W DEPORTES 1010 (GDL) - 1010 AM - XEHL-AM - Grupo Radio Cañón - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "98.1 Exa FM (Zamora) - 98.1 FM - XHPZAM-FM - Grupo Rey - Zamora, Michoacán",
+   "filed": "MX",
+   "place": "Zamora, Michoacán"
+  },
+  {
+   "name": "Católica Cuenca 98.1 FM",
+   "filed": "EC",
+   "place": "Cuenca"
+  },
+  {
+   "name": "dr p5 sjælland",
+   "filed": "DK",
+   "place": "Zeeland"
+  },
+  {
+   "name": "EchoBeat FM",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "El Conquistador Fm (Santiago)",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "From The Heart Radio",
+   "filed": "VI",
+   "place": "Georgia"
+  },
+  {
+   "name": "APOSTOLICUS 1370 (GDL) - 1370 AM - XEPJ-AM - Radiorama de Occidente - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "CATEDRAL DE LA MÚSICA (Zamora) - 91.7 FM - XHQL-FM - Cadena RASA - Zamora, Michoacán",
+   "filed": "MX",
+   "place": "Zamora, Michoacán"
+  },
+  {
+   "name": "EXA FM 99.3 (Mérida) - 99.3 FM - XHMRA-FM - MVS Radio - Mérida, Yucatán",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "LA BUENA ONDA 101.9 (GDL) - 101.9 FM - XEAD-FM - Grupo Unidifusión - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "LA TAPATIA 103.5 (GDL) - 103.5 FM - XHRX-FM - Radiorama de Occidente - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "MAGIA DIGITAL 89.9 (GDL) - 89.9 FM - XHRA-FM - MegaRadio - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "NOTICIAS Y DEPORTES 1330 (Los Ángeles) - 1330 AM - KWKW - Lotus Communications - Los Ángeles, California, EUA",
+   "filed": "MX",
+   "place": "Los Angeles, California"
+  },
+  {
+   "name": "+Wow (Mérida) - Online - www.cadenarasa.com - Cadena RASA - Mérida, Yucatán",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "106.7 Maxima (GDL) - 106.7 FM - XHOJ-FM - Radiorama de Occidente - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "99.9 La Lupe (GDL) - 99.9 FM - XHKB-FM - Multimedios Radio - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Arcadia Τρίπολη",
+   "filed": "GR",
+   "place": "Tripoli"
+  },
+  {
+   "name": "ArcoFM",
+   "filed": "ES",
+   "place": "Santander"
+  },
+  {
+   "name": "Digital FM",
+   "filed": "CL",
+   "place": "Concepción"
+  },
+  {
+   "name": "Gualaceo Stereo 92.7",
+   "filed": "EC",
+   "place": "Cuenca"
+  },
+  {
+   "name": "METAL ONLY - http://www.metal-only.de,METAL ONLY - http://www.metal-only.de - 24h Black Death Heavy Metal Rock und mehr!",
+   "filed": "DE",
+   "place": "St. Gallen"
+  },
+  {
+   "name": "Poesía y Cumbia Radio",
+   "filed": "CL",
+   "place": "Santiago, Región Metropolitana"
+  },
+  {
+   "name": "Positiva",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "Pudahuel",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "Radio Ocurrente, Ocurrente Como Tú",
+   "filed": "CL",
+   "place": "santiago"
+  },
+  {
+   "name": "Radio Retro Online",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "Radio SOLEIL",
+   "filed": "CI",
+   "place": "San-Pédro"
+  },
+  {
+   "name": "Radioactiva 92.5 FM",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "RadioFunAndMore,RadioFunAndMore",
+   "filed": "DE",
+   "place": "St. Gallen"
+  },
+  {
+   "name": "WIGN - 1550 AM Bluegrass Gospel",
+   "filed": "US",
+   "place": "Bristol, Tennessee"
+  },
+  {
+   "name": "XEJP-FM \"Joya 93.7\" Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  },
+  {
+   "name": "XHSON \"Beat\" 100.9 FM Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  },
+  {
+   "name": "Δημοτική Ραδιοφωνία Τρίπολης 91.5",
+   "filed": "GR",
+   "place": "Tripoli"
+  },
+  {
+   "name": "ARYA 88.5 (Mérida) - 88.5 FM - XHRRF-FM - Península Studios - Mérida, Yucatán",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "CANDELA 95.3 (Mérida) - 95.3 FM - XHMH-FM - Cadena RASA - Mérida, Yucatán",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "LA KEBUENA 90.9 (Mérida) - 90.9 FM - XHMQM-FM - Cadena RASA - Mérida, Yucatán",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "LA KEBUENA 97.1 (GDL) - 97.1 FM - XEBA-FM - Radiópolis - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "RADIO CAÑÓN 580 (GDL) - 580 AM - XEAV-AM - Grupo Radio Cañón - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "RETRO FM 107.5 (GDL) - 107.5 FM - XHVOZ-FM - Grupo Audiorama Comunicaciones - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "101.5 W Radio (GDL) - 101.5 FM - XHWK-FM - Radiópolis - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "103.1 Retro (Mérida) - 103.1 FM - XHPYM-FM - Cadena RASA - Mérida, Yucatán",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "105.9 Extasis Digital (GDL) - 105.9 FM - XHQJ-FM - Radiorama de Occidente - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "1340 Radiorama Frecuencia Deportiva (GDL) - 1340 AM - XEDKT-AM - Radiorama de Occidente - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Antxeta irratia",
+   "filed": "FR",
+   "place": "Basque Country"
+  },
+  {
+   "name": "Camino FM",
+   "filed": "ES",
+   "place": "Santiago"
+  },
+  {
+   "name": "Cuenca TV",
+   "filed": "EC",
+   "place": "Cuenca"
+  },
+  {
+   "name": "Distinta FM SANTANDER - CANTABRIA89.6LLUCMAJOR - MALLORCA107.9",
+   "filed": "ES",
+   "place": "Santander"
+  },
+  {
+   "name": "Exclusive - Scorpions",
+   "filed": "DE",
+   "place": "Hanover"
+  },
+  {
+   "name": "Isla Negra Upbeat",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "La Voz del Tomebamba 1070 AM",
+   "filed": "EC",
+   "place": "Cuenca"
+  },
+  {
+   "name": "María",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "Nova Disco Radio",
+   "filed": "AR",
+   "place": "San Miguel, Pcia.de Buenos Aires"
+  },
+  {
+   "name": "Organica Radio",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Punto 7 - Concepción",
+   "filed": "CL",
+   "place": "Concepción"
+  },
+  {
+   "name": "Radio Complice Fm.",
+   "filed": "EC",
+   "place": "Cuenca"
+  },
+  {
+   "name": "Radio Cristo Vive en Mi",
+   "filed": "CL",
+   "place": "Santiago, Región Metropolitana"
+  },
+  {
+   "name": "Radio Flow Santander",
+   "filed": "ES",
+   "place": "santander"
+  },
+  {
+   "name": "Radio Interamericana",
+   "filed": "CL",
+   "place": "Concepción"
+  },
+  {
+   "name": "Radio Nuevo Tiempo Chile",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "Radio Portales 1180 AM",
+   "filed": "CL",
+   "place": "Santiago, Región Metropolitana"
+  },
+  {
+   "name": "Radio REAL - Radio fuera de la radio",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Radio Universidad del Bío-Bío",
+   "filed": "CL",
+   "place": "Concepción"
+  },
+  {
+   "name": "Radiofavoritaranchera",
+   "filed": "CL",
+   "place": "concepcion"
+  },
+  {
+   "name": "RadioMv.com | Russian Old Testament (128Kbps)",
+   "filed": "RU",
+   "place": "Washington"
+  },
+  {
+   "name": "Rclasicos 96.9 FM",
+   "filed": "MX",
+   "place": "Santa Ana, Sonora"
+  },
+  {
+   "name": "Ritmo Urbano CL",
+   "filed": "CL",
+   "place": "Santiago, Región Metropolitana"
+  },
+  {
+   "name": "UNIVERSAL Guadalajara - 700 AM - XEDKR-AM - Grupo Radio Centro - Guadalajara, JC",
+   "filed": "MX",
+   "place": "Guadalajara"
+  },
+  {
+   "name": "WBHM 106.1 The Hub",
+   "filed": "US",
+   "place": "Birmingham, Alabama"
+  },
+  {
+   "name": "WBHM 90.3",
+   "filed": "US",
+   "place": "Birmingham, Alabama"
+  },
+  {
+   "name": "WBPM 92.9 / 96.5",
+   "filed": "US",
+   "place": "Kingston, New York"
+  },
+  {
+   "name": "XEDK -1250 AM",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "XEL-AM 1260 \"La Comadre\" Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  },
+  {
+   "name": "XEQR \"Radio Centro\" 1030 AM Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  },
+  {
+   "name": "XERC-FM 97.7 \"Radio Centro\" Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  },
+  {
+   "name": "XHFO \"Radio RED\" 92.1 FM Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  },
+  {
+   "name": "AMOR 100.1 (Mérida) - 100.1 FM - XHYU-FM - Grupo SIPSE Radio - Mérida, Yucatán",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "EL VIEJÓN 98.3 (San Pedro) - 98.3 FM - XHBF-FM - GPS Media - San Pedro, Coahuila",
+   "filed": "MX",
+   "place": "San Pedro, Coahuila"
+  },
+  {
+   "name": "LA COYOTERA 102.3 (GDL) - 102.3 FM - XHSCDQ-FM - Comunica-Acción y Cultura del Occidente de México, A.C. - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "LA TREMENDA 560 (Santiago Papasquiaro) - 560 AM - XESRD-AM - Grupo Garza Limón - Santiago Papasquiaro, Durango",
+   "filed": "MX",
+   "place": "Santiago, Durango"
+  },
+  {
+   "name": "101.5 Xe'ek (Mérida) - 101.5 FM - XHYK-FM - Península Studios - Mérida, Yucatán",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "103.9 La Zamorana (Zamora) - 103.9 FM - XHEZM-FM - Cadena RASA - Zamora, Michoacán",
+   "filed": "MX",
+   "place": "Zamora, Michoacán"
+  },
+  {
+   "name": "89.3 Radio Mundo (Mérida) - 89.3 FM - XHMIA-FM - Mérida, Yucatan",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "CCR Chronicles Christian Radio",
+   "filed": "US",
+   "place": "Kingston"
+  },
+  {
+   "name": "CJWV Oldies 96.7 FM",
+   "filed": "CA",
+   "place": "Peterborough"
+  },
+  {
+   "name": "Conexión X",
+   "filed": "CL",
+   "place": "Santiago, Región Metropolitana"
+  },
+  {
+   "name": "Digital 105.5 FM - CONCEPCIÓN",
+   "filed": "CL",
+   "place": "Concepción"
+  },
+  {
+   "name": "Duna",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "ERT Tripoli",
+   "filed": "GR",
+   "place": "Tripoli"
+  },
+  {
+   "name": "Esencial Radio",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Femenina FM",
+   "filed": "CL",
+   "place": "Concepción"
+  },
+  {
+   "name": "GDL 89.1 La Bestia Grupera XHGDA",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Impact FM Sud Ouest",
+   "filed": "CI",
+   "place": "San-Pédro"
+  },
+  {
+   "name": "Llacolén",
+   "filed": "CL",
+   "place": "Concepción"
+  },
+  {
+   "name": "Pirinola",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "Prigorski radio",
+   "filed": "HR",
+   "place": "Antuna Gustava Matoša 3, Križevci"
+  },
+  {
+   "name": "Radio Gallito Guadalajara Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
+  },
+  {
+   "name": "Radioactiva",
+   "filed": "CL",
+   "place": "Santiago"
+  },
+  {
+   "name": "St. Gabriel Catholic Radio",
+   "filed": "US",
+   "place": "Colombo"
+  },
+  {
+   "name": "WBCR-LP",
+   "filed": "US",
+   "place": "Bedfordshire, Buckinghamshire, Berkshire"
+  },
+  {
+   "name": "WBNH 88.5 FM Good News Radio",
+   "filed": "US",
+   "place": "Pekin, Illinois"
+  },
+  {
+   "name": "WGHQ-AM 920/W223CR 92.5 FM Kingston, NY",
+   "filed": "US",
+   "place": "Kingston, NY"
+  },
+  {
+   "name": "XEX 730 \"W Deportes\" Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  },
+  {
+   "name": "XHPOP-FM 99.3 \"Radio Disney\" Mexico City, DF",
+   "filed": "MX",
+   "place": "Distrito Federal"
+  }
+ ]
+}

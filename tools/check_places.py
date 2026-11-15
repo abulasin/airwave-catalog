@@ -18,6 +18,7 @@ for cc, info in regions.items():
                 owner[k].add(cc)
 mine = {cc: {norm(n) for _, name, alts in info['r'] for n in [name] + alts} for cc, info in regions.items()}
 
+reviewed = {(r['name'].lower(), r['filed'], norm(r['place'])) for r in json.load(open('tools/reviewed_places.json'))['ok']}
 d = json.load(open('stations.json'))
 cols = d['columns']
 found = []
@@ -32,10 +33,11 @@ for r in d['stations']:
             continue
         ccs = owner.get(k)
         if ccs and len(ccs) == 1 and cc not in ccs:
-            found.append((s['name'], cc, state, next(iter(ccs)), s.get('clicks') or 0))
+            if (s['name'].lower(), cc, norm(state)) not in reviewed:
+                found.append((s['name'], cc, state, next(iter(ccs)), s.get('clicks') or 0))
             break
 
-print(f'CHECKED {len(d["stations"])} stations; {len(found)} look filed under the wrong country')
+print(f'CHECKED {len(d["stations"])} stations; {len(found)} look filed under the wrong country (not counting ones already reviewed)')
 print('BY_PAIR', json.dumps(Counter(f'{a}->{b}' for _, a, _, b, _ in found).most_common(40)))
 print('LIST_START')
 for name, cc, state, real, clicks in sorted(found, key=lambda f: -f[4])[:400]:

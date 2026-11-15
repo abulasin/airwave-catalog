@@ -9,6 +9,12 @@
       "name": "CKWW",
       "country": "CA",
       "state": "Windsor, Ontario"
+    },
+    {
+      "name": "Dial Radio",
+      "onlyIn": "SD",
+      "country": "FR",
+      "state": "Nouvelle-Aquitaine"
     }
   ]
 }

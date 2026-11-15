@@ -1,0 +1,18 @@
+# Report only: lists stations whose place belongs to another country. Changes nothing.
+name: Check station places
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare places with countries
+        run: |
+          curl -s -m 60 https://abulasin.github.io/airwave-catalog/stations.json > stations.json
+          python3 tools/check_places.py

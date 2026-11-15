@@ -1,0 +1,42 @@
+# Lists the most-played stations whose names are not in English, for hand translation.
+name: List foreign station names
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: How many stations
+        required: true
+        default: '300'
+
+permissions:
+  contents: read
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pick the most-played stations with non-English names
+        env:
+          COUNT: ${{ inputs.count }}
+        run: |
+          curl -s -m 60 https://abulasin.github.io/airwave-catalog/stations.json > stations.json
+          python3 - <<'PY'
+          import json, os, re
+          d = json.load(open('stations.json'))
+          cols = d['columns']; rows = [dict(zip(cols, r)) for r in d['stations']]
+          latin = re.compile(r'^[\u0000-ɏḀ-ỿ\s\d\W]*$')
+          seen = set(); out = []
+          for s in sorted(rows, key=lambda s: -(s.get('clicks') or 0)):
+              name = (s.get('name') or '').strip()
+              lang = (s.get('language') or '').lower().split(',')[0].strip()
+              if (s.get('codec') or '').lower() in ('ogg', 'opus', 'flac'): continue
+              foreign = not latin.match(name) or (lang and lang not in ('english', 'en'))
+              if not foreign or name.lower() in seen: continue
+              seen.add(name.lower())
+              out.append({'id': s['id'], 'n': name, 'c': s.get('countryCode'), 'l': lang})
+              if len(out) >= int(os.environ['COUNT']): break
+          print('FOREIGN_START')
+          for o in out: print(json.dumps(o, ensure_ascii=False))
+          print('FOREIGN_END')
+          PY

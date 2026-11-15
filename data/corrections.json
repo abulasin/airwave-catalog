@@ -1,5 +1,5 @@
 {
-  "_help": "Stations the directory files under the wrong country or place, or without a genre they should have. Matched by name (case does not matter; \"CHUO\" also catches \"CHUO 89.1 FM\"). `country` is the real two-letter code; `state` the real place, if known; `onlyIn` limits the fix to stations the directory files under that country; `addTags` adds genres. Keep this in step with src/data/corrections.ts, which does the same job for the live fallback.",
+  "_help": "Stations the directory files under the wrong country or place, or without a genre they should have. Matched by name (case does not matter; \"CHUO\" also catches \"CHUO 89.1 FM\"). `country` is the real two-letter code; `state` the real place, if known; `onlyIn` limits the fix to stations the directory files under that country, and `onlyPlace` to those it gives that place; `addTags` adds genres. Keep this in step with src/data/corrections.ts, which does the same job for the live fallback.",
   "stations": [
     {
       "name": "Ayaz TV",
@@ -15,6 +15,237 @@
       "onlyIn": "SD",
       "country": "FR",
       "state": "Nouvelle-Aquitaine"
+    },
+    {
+      "name": "Hitradio RTL Chemnitz",
+      "onlyIn": "DZ",
+      "onlyPlace": "Sachsen",
+      "country": "DE",
+      "state": "Sachsen"
+    },
+    {
+      "name": "Hayatmix",
+      "onlyIn": "TM",
+      "onlyPlace": "Istanbul",
+      "country": "TR",
+      "state": "Istanbul"
+    },
+    {
+      "name": "Uğur Öztürk",
+      "onlyIn": "TM",
+      "onlyPlace": "kocaeli",
+      "country": "TR",
+      "state": "Kocaeli"
+    },
+    {
+      "name": "BRN Radio - Arabic Channel",
+      "onlyIn": "VI",
+      "onlyPlace": "Virginia",
+      "country": "US",
+      "state": "Virginia"
+    },
+    {
+      "name": "Grits Radio",
+      "onlyIn": "UM",
+      "onlyPlace": "Massachusetts",
+      "country": "US",
+      "state": "Massachusetts"
+    },
+    {
+      "name": "WQNA",
+      "onlyIn": "UM",
+      "onlyPlace": "California",
+      "country": "US",
+      "state": "California"
+    },
+    {
+      "name": "KISS FM Nederland",
+      "onlyIn": "BQ",
+      "onlyPlace": "Noord-Holland, Amsterdam",
+      "country": "NL",
+      "state": "Noord-Holland, Amsterdam"
+    },
+    {
+      "name": "Que Brille 800!",
+      "onlyIn": "NL",
+      "onlyPlace": "Bonaire",
+      "country": "BQ",
+      "state": "Bonaire"
+    },
+    {
+      "name": "Radio Mas RocknPop",
+      "onlyIn": "CO",
+      "onlyPlace": "Arequipa",
+      "country": "PE",
+      "state": "Arequipa"
+    },
+    {
+      "name": "Radio 7 Tazas de Molina FM",
+      "onlyIn": "CN",
+      "onlyPlace": "Maule",
+      "country": "CL",
+      "state": "Maule"
+    },
+    {
+      "name": "RÁDIO EU SOU GOIÁS",
+      "onlyIn": "PT",
+      "onlyPlace": "Goiás",
+      "country": "BR",
+      "state": "Goiás"
+    },
+    {
+      "name": "Rádio Vida Terra Rica",
+      "onlyIn": "PT",
+      "onlyPlace": "Parana",
+      "country": "BR",
+      "state": "Paraná"
+    },
+    {
+      "name": "Exotica Radio",
+      "onlyIn": "PH",
+      "onlyPlace": "Aveiro",
+      "country": "PT",
+      "state": "Aveiro"
+    },
+    {
+      "name": "KRISTALfm",
+      "onlyIn": "BN",
+      "onlyPlace": "Dar es Salaam",
+      "country": "TZ",
+      "state": "Dar es Salaam"
+    },
+    {
+      "name": "Bigode Grosso",
+      "onlyIn": "ZA",
+      "onlyPlace": "maputo",
+      "country": "MZ",
+      "state": "Maputo"
+    },
+    {
+      "name": "Rodnoe radio VT",
+      "onlyIn": "RU",
+      "onlyPlace": "Dushanbe, dsb, Tajikistan",
+      "country": "TJ",
+      "state": "Dushanbe"
+    },
+    {
+      "name": "Krajiški Radio Dubica",
+      "onlyIn": "AU",
+      "onlyPlace": "Republika Srpska",
+      "country": "BA",
+      "state": "Republika Srpska"
+    },
+    {
+      "name": "Naxi House",
+      "onlyIn": "HR",
+      "onlyPlace": "Belgrade",
+      "country": "RS",
+      "state": "Belgrade"
+    },
+    {
+      "name": "Free FM 80s",
+      "onlyIn": "ES",
+      "onlyPlace": "tokyo",
+      "country": "JP",
+      "state": "Tokyo"
+    },
+    {
+      "name": "Kanal K",
+      "onlyIn": "CH",
+      "onlyPlace": "Saarland",
+      "country": "DE",
+      "state": "Saarland"
+    },
+    {
+      "name": "Life Radio Non Stop Music",
+      "onlyIn": "DE",
+      "onlyPlace": "Oberösterreich",
+      "country": "AT",
+      "state": "Oberösterreich"
+    },
+    {
+      "name": "TrancePulse FM",
+      "onlyIn": "GB",
+      "onlyPlace": "Dublin",
+      "country": "IE",
+      "state": "Dublin"
+    },
+    {
+      "name": "Space Unicorn Radio",
+      "onlyIn": "GB",
+      "onlyPlace": "New Jersey",
+      "country": "US",
+      "state": "New Jersey"
+    },
+    {
+      "name": "Radio Rashi online",
+      "onlyIn": "BG",
+      "onlyPlace": "South Carolina",
+      "country": "US",
+      "state": "South Carolina"
+    },
+    {
+      "name": "Lifted Radio",
+      "onlyIn": "ZA",
+      "onlyPlace": "South Carolina",
+      "country": "US",
+      "state": "South Carolina"
+    },
+    {
+      "name": "Radio Onda Latina",
+      "onlyIn": "MX",
+      "onlyPlace": "California",
+      "country": "US",
+      "state": "California"
+    },
+    {
+      "name": "Majestic Juikebox Radio",
+      "onlyIn": "US",
+      "onlyPlace": "London, England",
+      "country": "GB",
+      "state": "London, England"
+    },
+    {
+      "name": "Asgard Radio",
+      "onlyIn": "US",
+      "onlyPlace": "Valparaíso",
+      "country": "CL",
+      "state": "Valparaíso"
+    },
+    {
+      "name": "dj canic radio",
+      "onlyIn": "RS",
+      "onlyPlace": "Norfolk",
+      "country": "GB",
+      "state": "Norfolk"
+    },
+    {
+      "name": "Intense Radio - We love Dance 256K",
+      "onlyIn": "NL",
+      "onlyPlace": "Burgenland",
+      "country": "AT",
+      "state": "Burgenland"
+    },
+    {
+      "name": "MSX Tribute Radio by MSXALL",
+      "onlyIn": "US",
+      "onlyPlace": "Burgenland",
+      "country": "AT",
+      "state": "Burgenland"
+    },
+    {
+      "name": "Radio Alta",
+      "onlyIn": "CH",
+      "onlyPlace": "Burgenland",
+      "country": "AT",
+      "state": "Burgenland"
+    },
+    {
+      "name": "Bo´s Cool Music Radio",
+      "onlyIn": "ES",
+      "onlyPlace": "Bavaria",
+      "country": "DE",
+      "state": "Bayern"
     }
   ]
 }

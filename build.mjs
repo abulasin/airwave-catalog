@@ -260,6 +260,8 @@ function applyCorrections(rows, corrections) {
     if (!fix) continue;
     // `onlyIn`: apply only to stations the directory files under this country (names can repeat across countries).
     if (fix.onlyIn && String(fix.onlyIn).toUpperCase() !== s.countryCode) continue;
+    // `onlyPlace`: and only when the directory gives this place (so a real station of the same name is left alone).
+    if (fix.onlyPlace && norm(fix.onlyPlace) !== norm(s.state)) continue;
     const country = String(fix.country || s.countryCode).toUpperCase();
     s.state = fix.state ?? (country === s.countryCode ? s.state : '');
     s.countryCode = country;

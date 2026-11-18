@@ -780,6 +780,21 @@
    "name": "XHPOP-FM 99.3 \"Radio Disney\" Mexico City, DF",
    "filed": "MX",
    "place": "Distrito Federal"
+  },
+  {
+   "name": "100.1 Amor (Mérida) - 100.1 FM - XHYU-FM - Grupo SIPSE Radio - Mérida, Yucatán",
+   "filed": "MX",
+   "place": "Mérida, Yucatán"
+  },
+  {
+   "name": "Súbela",
+   "filed": "CL",
+   "place": "Santiago, Región Metropolitana"
+  },
+  {
+   "name": "100.3 El Heraldo Radio (GDL) - 100.3 FM - XHAV-FM - Heraldo Media Group - Guadalajara, Jalisco",
+   "filed": "MX",
+   "place": "Guadalajara, Jalisco"
   }
  ]
 }
